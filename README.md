@@ -38,10 +38,10 @@ CREATE TABLE club_member_info_cleaned (
 ```sql
 INSERT INTO club_member_info_cleaned 
 SELECT  * FROM club_member_info;
+```
 
 ## Edit column full_name
-### Update column full_name
 ```sql
 UPDATE club_member_info_cleaned SET full_name = TRIM(full_name);
 UPDATE club_member_info_cleaned SET full_name = UPPER(full_name);
-
+```
