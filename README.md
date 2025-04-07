@@ -39,8 +39,12 @@ INSERT INTO club_member_info_cleaned
 SELECT  * FROM club_member_info;
 ```
 
-## Edit column full_name
+## Cleaned full_name
 ```sql
+SELECT REPLACE(REPLACE(full_name, '!', ''), '?', '')
+FROM club_member_info_clean
+WHERE full_name LIKE '%!%' OR full_name LIKE '%?%';
+
 UPDATE club_member_info_cleaned SET full_name = TRIM(full_name);
 UPDATE club_member_info_cleaned SET full_name = UPPER(full_name);
 ```
