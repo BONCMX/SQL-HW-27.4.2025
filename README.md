@@ -59,4 +59,14 @@ SET age =
 	END;
 ```
 
+## Cleaned martial_status column
+```sql
+UPDATE club_member_info_clean
+SET martial_status = 
+    CASE
+        WHEN martial_status IS NULL OR TRIM(martial_status) = '' THEN 'Unknown'
+        ELSE REPLACE(martial_status, 'divored', 'divorced')
+    END;
+```
+
 
