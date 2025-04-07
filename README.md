@@ -43,8 +43,6 @@ SELECT  * FROM club_member_info;
 ```sql
 UPDATE club_member_info_cleaned SET full_name = TRIM(full_name);
 UPDATE club_member_info_cleaned SET full_name = UPPER(full_name);
-
-SELECT REPLACE(REPLACE(full_name, '!', ''), '?', '')
-FROM club_member_info_clean
+UPDATE club_member_info_clean SET full_name = REPLACE(REPLACE(full_name, '!', ''), '?', '')
 WHERE full_name LIKE '%!%' OR full_name LIKE '%?%';
 ```
