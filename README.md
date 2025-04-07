@@ -68,5 +68,15 @@ SET martial_status =
         ELSE REPLACE(martial_status, 'divored', 'divorced')
     END;
 ```
+## Cleaned phone column
+```sql
+UPDATE club_member_info_clean SET phone = REPLACE(phone, '-', ' ');
+```
 
-
+## Cleaned job_title column
+```sql
+UPDATE club_member_info_clean SET job_title = CASE
+	WHEN TRIM(job_title) = '' OR job_title IS NULL THEN 'Unknown'
+	ELSE job_title
+END;
+```
