@@ -43,7 +43,8 @@ SELECT  * FROM club_member_info;
 ```sql
 UPDATE club_member_info_cleaned SET full_name = TRIM(full_name);
 UPDATE club_member_info_cleaned SET full_name = UPPER(full_name);
-UPDATE club_member_info_clean SET full_name = REPLACE(REPLACE(full_name, '!', ''), '?', '')
+UPDATE club_member_info_clean
+	SET full_name = REPLACE(REPLACE(full_name, '!', ''), '?', '')
 WHERE full_name LIKE '%!%' OR full_name LIKE '%?%';
 ```
 
@@ -53,7 +54,7 @@ UPDATE club_member_info_clean
 SET age =
 	CASE
 		WHEN LENGTH(age) > 2
-			THEN SUBSTR(age, 1, LENGTH(age) - 1)
+		THEN SUBSTR(age, 1, LENGTH(age) - 1)
 		ELSE age 
 	END;
 ```
