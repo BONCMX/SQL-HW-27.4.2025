@@ -47,6 +47,15 @@ UPDATE club_member_info_clean
 	SET full_name = REPLACE(REPLACE(full_name, '!', ''), '?', '')
 WHERE full_name LIKE '%!%' OR full_name LIKE '%?%';
 ```
+The result:
+|TRIM(full_name)|
+|---------------|
+|ADDIE LUSH|
+|ROCK CRADICK|
+|SYDEL SHARVELL|
+|CONSTANTIN DE LA CRUZ|
+|GAYLOR REDHOLE|
+
 
 ## Cleaned age column
 ```sql
