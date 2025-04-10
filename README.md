@@ -151,7 +151,8 @@ UPDATE club_member_info_clean SET membership_date =
  SUBSTR(membership_date, 1, LENGTH(membership_date) - 4) || '20' || 
     SUBSTR(membership_date, LENGTH(membership_date) - 1, 2)
 WHERE membership_date LIKE '%19__';
-```The result:
+```
+The result:
 |membership_date_fixed|
 |---------------------|
 |3/12/2021|
