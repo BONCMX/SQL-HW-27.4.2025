@@ -67,6 +67,20 @@ SET age =
 		ELSE age 
 	END;
 ```
+The result:
+|age|age_cleaned|
+|---|-----------|
+|39|39|
+|53|53|
+|39|39|
+|27|27|
+|37|37|
+|34|34|
+|27|27|
+|38|38|
+|25|25|
+|555|55|
+
 
 ## Cleaned martial_status column
 ```sql
@@ -77,10 +91,25 @@ SET martial_status =
         ELSE REPLACE(martial_status, 'divored', 'divorced')
     END;
 ```
+The result:
+
+
 ## Cleaned phone column
 ```sql
 UPDATE club_member_info_clean SET phone = REPLACE(phone, '-', ' ');
 ```
+|martial_status|martial_status_clean|
+|--------------|--------------------|
+|married|married|
+|married|married|
+|divorced|divorced|
+||Unknown|
+|married|married|
+|single|single|
+|married|married|
+|divorced|divorced|
+|single|single|
+|married|married|
 
 ## Cleaned job_title column
 ```sql
