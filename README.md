@@ -92,12 +92,6 @@ SET martial_status =
     END;
 ```
 The result:
-
-
-## Cleaned phone column
-```sql
-UPDATE club_member_info_clean SET phone = REPLACE(phone, '-', ' ');
-```
 |martial_status|martial_status_clean|
 |--------------|--------------------|
 |married|married|
@@ -111,6 +105,25 @@ UPDATE club_member_info_clean SET phone = REPLACE(phone, '-', ' ');
 |single|single|
 |married|married|
 
+## Cleaned phone column
+```sql
+UPDATE club_member_info_clean SET phone = REPLACE(phone, '-', ' ');
+```
+The result:
+|phone|phone_cleaned|
+|-----|-------------|
+|254-389-8708|254 389 8708|
+|910-566-2007|910 566 2007|
+|702-187-8715|702 187 8715|
+|402-688-7162|402 688 7162|
+|917-394-6001|917 394 6001|
+|937-467-6942|937 467 6942|
+|513-726-9885|513 726 9885|
+|616-617-0965|616 617 0965|
+|504-918-4753|504 918 4753|
+|808-177-0318|808 177 0318|
+
+
 ## Cleaned job_title column
 ```sql
 UPDATE club_member_info_clean SET job_title = CASE
@@ -118,3 +131,16 @@ UPDATE club_member_info_clean SET job_title = CASE
 	ELSE job_title
 END;
 ```
+The result:
+|job_title|job_title_cleaned|
+|---------|-----------------|
+|Professor|Professor|
+|Social Worker|Social Worker|
+|Quality Engineer|Quality Engineer|
+|Community Outreach Specialist|Community Outreach Specialist|
+|VP Quality Control|VP Quality Control|
+|GIS Technical Architect|GIS Technical Architect|
+||Unknown|
+|Human Resources Assistant IV|Human Resources Assistant IV|
+|Marketing Manager|Marketing Manager|
+|Help Desk Operator|Help Desk Operator|
