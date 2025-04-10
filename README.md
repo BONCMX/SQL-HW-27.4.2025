@@ -144,3 +144,29 @@ The result:
 |Human Resources Assistant IV|Human Resources Assistant IV|
 |Marketing Manager|Marketing Manager|
 |Help Desk Operator|Help Desk Operator|
+
+## Cleaned membership_date
+```sql
+UPDATE club_member_info_clean SET membership_date =
+ SUBSTR(membership_date, 1, LENGTH(membership_date) - 4) || '20' || 
+    SUBSTR(membership_date, LENGTH(membership_date) - 1, 2)
+WHERE membership_date LIKE '%19__';
+```The result:
+|membership_date_fixed|
+|---------------------|
+|3/12/2021|
+|10/1/2012|
+|2/20/2016|
+|5/8/2012|
+|10/4/2019|
+|3/10/2013|
+|1/8/2012|
+|9/2/2014|
+|5/11/2016|
+|1/31/2015|
+|5/15/2015|
+|3/3/2017|
+|4/30/2015|
+|5/22/2021|
+|10/27/2015|
+|7/5/2015|
