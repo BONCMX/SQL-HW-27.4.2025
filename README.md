@@ -217,7 +217,7 @@ WHERE ROWID NOT IN (
 	GROUP BY email
 );
 ```
-✅ Final Result
+## ✅ Final Result
 | full\_name            | age | marital\_status | email                                                       | phone        | full\_address                                  | job\_title                   | membership\_date |
 | --------------------- | --- | --------------- | ----------------------------------------------------------- | ------------ | ---------------------------------------------- | ---------------------------- | ---------------- |
 | ADDIE LUSH            | 40  | married         | [alush0@shutterfly.com](mailto:alush0@shutterfly.com)       | 254-389-8708 | 3226 Eastlawn Pass, Temple, Texas              | Assistant Professor          | 7/31/2013        |
