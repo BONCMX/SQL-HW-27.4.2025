@@ -186,7 +186,7 @@ WHERE email IN (
 ORDER BY email;
 ```
 As you can see from the table below, there are 19 duplicated rows.
-
+The result:
 | rowid | full\_name         | age     | marital\_status | email                                                           | phone        | full\_address                                | job\_title                   | membership\_date |
 | ----- | ------------------ | ------- | --------------- | --------------------------------------------------------------- | ------------ | -------------------------------------------- | ---------------------------- | ---------------- |
 | 1801  | ERWIN HUXTER       | 25      | single          | [ehuxterm0@marketwatch.com](mailto:ehuxterm0@marketwatch.com)   | 704-295-3261 | 0 Homewood Road, Charlotte, North Carolina   | Software Test Engineer III   | 9/29/2017        |
